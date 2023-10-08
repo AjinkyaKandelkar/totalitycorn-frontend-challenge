@@ -1,0 +1,62 @@
+.showmore{
+    font-size: small;
+    color: #ff3f6c;
+}
+.showmore:hover
+{
+    cursor: pointer;
+}
+.btn-custom {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #dc3545;
+    --bs-btn-border-color: #dc3545;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #bb2d3b;
+    --bs-btn-hover-border-color: #b02a37;
+    --bs-btn-focus-shadow-rgb: 225,83,97;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #b02a37;
+    --bs-btn-active-border-color: #a52834;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #dc3545;
+    --bs-btn-disabled-border-color: #dc3545;
+    --bs-btn-padding-x: 4rem;
+    --bs-btn-padding-y: 0.6rem;
+    --bs-btn-border-radius:0;
+}
+.estDel
+{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.8rem;
+    font-size:0.9rem;
+}
+.nav-pills .nav-link {
+    border-radius: 0rem !important;
+}
+.card{
+    --bs-card-border-width:0;
+}
+.card-header 
+{
+    background-color: white !important;
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #ff3f6c;
+    background-color: white;
+}
+.nav{
+
+    --bs-nav-link-color: black;
+    --bs-nav-link-hover-color: var(--bs-link-hover-color);
+    
+}
+.nav-link {
+    background-color: rgba(205, 205, 205, 0.486);
+    
+}
+.paytext
+{
+    
+}

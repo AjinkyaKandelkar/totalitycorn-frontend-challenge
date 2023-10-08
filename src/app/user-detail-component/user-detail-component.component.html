@@ -1,0 +1,156 @@
+<!-- <div class="backcolor" style="height:50vh ; position: relative;">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <div class="text-white fs-2  m-5">
+                    Hello {{UserObj.firstname}}
+                </div>
+                 <div class="m-5">
+                    <button class="btn btn-custom" (click)="changeDisabled()"> Edit profile </button>
+                    <button class="btn btn-custom ms-2" type="button" data-bs-toggle="modal" data-bs-target="#SQuestion"> Add Security questions </button>
+                   
+                </div> 
+            </div>
+        </div>
+
+    </div>
+</div> -->
+<div class="container mt-5 " >
+    <div class="row " >
+        <div class="row" >
+            
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header text-center">
+                            <div>
+                                <img  class="img-fluid dot" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8&w=1000&q=80" alt="">    
+                            </div>
+                            <div class="fs-5 mt-2">
+                                {{UserObj.firstname}} {{UserObj.lastname}} 
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="text-center">
+                                <i class="bi bi-calendar-heart me-2 fs-5"></i> {{Bdate}}
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="card">
+                        <div class="card-header p-4">
+                            <div class="fs-3  ">
+                                My account
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <form #form="ngForm"  class="d-grid gap-2"  (ngSubmit)="updateUser()" >
+                                <div class="row">
+                                    <div class="card-title text-muted "> 
+                                        User Information 
+                                    </div>
+                                    <div class="col-md-6"> 
+                                        <label class="form-label">
+                                            Username
+                                        </label>
+                                        <input type="text" class="form-control border-top" name="email" [(ngModel)]="UserObj.email" [disabled]="disabledInput" > 
+                                    </div>
+                                    <div class="col-md-6"> 
+                                        <label class="form-label">
+                                            Email address
+                                        </label>
+                                        <input type="text" class="form-control" name="email" [(ngModel)]="UserObj.email"  [disabled]="disabledInput" > 
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label class="form-label">
+                                            First name
+                                        </label>
+                                        <input type="text" class="form-control" name="firstname" [(ngModel)]="UserObj.firstname" [disabled]="disabledInput" > 
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">
+                                            Last name
+                                        </label>
+                                        <input type="text" class="form-control" name="lastname" [(ngModel)]="UserObj.lastname" [disabled]="disabledInput" >
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="card-title text-muted "> Contact Information </div>
+                                    <div class="col-12">
+                                        <label class="form-label"> Address </label>
+                                        <textarea type="text" class="form-control" name="address" [(ngModel)]="UserObj.address" [disabled]="disabledInput" > </textarea> 
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label class="form-label"> City </label>
+                                        <input type="text" class="form-control" name="city" [(ngModel)]="UserObj.city" [disabled]="disabledInput" >
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label"> State </label>
+                                        <input type="text" class="form-control" name="state" [(ngModel)]="UserObj.state" [disabled]="disabledInput" >
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label"> Pincode </label>
+                                        <input type="text" class="form-control" name="pincode" [(ngModel)]="UserObj.pincode"  [disabled]="disabledInput" >
+                                    </div>
+                                    <div class="col-12">
+                                        <button class="btn btn-danger mt-2 float-end" type="submit" *ngIf="!disabledInput"> Submit </button>
+                                    </div>
+                                </div>
+                                <!-- About me later -->
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+           
+        </div>
+    </div>
+    
+</div>
+
+
+  <!-- Security Question Modal -->
+  <div class="modal fade" id="SQuestion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modal-title fs-4" id="exampleModalLabel">Security Questions</div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form>
+        <div class="modal-body">
+                <div class="row">
+                    <!-- <div class="col-6">
+                        <label class="form-label mt-4"> {{questionlist[0].question}} </label>
+                        <input type="text" class="form-control" #firstAns>
+                    </div>
+                    <div class="col-6">
+                        <label class="form-label mt-4"> {{questionlist[1].question}} </label>
+                        <input type="text" class="form-control" #secondAns>
+                    </div>
+                    <div class="col-6">
+                        <label class="form-label mt-4"> {{questionlist[2].question}} </label>
+                        <input type="text" class="form-control" #thirdAns>
+                    </div>
+                    <div class="col-6">
+                        <label class="form-label mt-4"> {{questionlist[3].question}} </label>
+                        <input type="text" class="form-control" #forthAns>
+                    </div> -->
+                    
+                </div>
+            
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="addSequrity()" >Save changes</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,66 @@
+<div class="container">
+    <div class="row">
+        <div class="col ">
+            <div class="d-flex justify-content-between mt-2">
+                <div class="fs-2 "> 
+                    Shopping Cart
+                </div>
+                <div class="mt-2">
+                    <button class="btn btn-primary" routerLink="address"> Proceed to checkout </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+
+        <div *ngFor="let pro of productstoCart" class="col-md-12 mb-2">
+            <div class="card">
+                <div class="row productcard">
+                    <div class="col-md-3 col-sm-6 d-flex justify-content-center align-items-center">
+                        <div class="card w-50 ">
+                            <img class="img-fluid " src="{{pro.thumbnailUrl}}" alt="" srcset="">  
+                        </div>
+                    </div>
+                    <div class="col-md-9 col-sm-6">
+                        <div class="row">
+                            <div class="col-md-6">
+
+                                <div class="productdetails ms-2">
+                                    <div class="productname fs-5 fw-semibold mt-3">
+                                        {{pro.title}}
+                                    </div>
+                                    <div class="author">
+                                        <i> {{pro.authors}} </i> 
+                                    </div>
+                                    <div class="productprice mt-3 fw-semibold">
+                                        <span class=""> &#8377; </span> <span class="fs-4"> {{pro.price}} </span> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 d-flex justify-content-center align-items-center">
+                                <div class=""> 
+                                    <button class="btn btn-danger" id="incbutid+{{pro.productid}}"  type="button" (click)="decPro(pro.productid)"> <i class="bi bi-dash"></i> </button>
+                                    <span class="p-3" id="quantity +pro.quantity">{{pro.quantity}}</span>
+                                    <button class="btn btn-success" id="decbutid+{{pro.productid}}" type="button" (click)="incPro(pro.productid)"> <i class="bi bi-plus"></i> </button>     
+                                </div>
+                            </div>
+                            <div class="col-md-2 d-flex justify-content-center align-items-center">
+                                <div class=""> </div>
+                                <div class="fs-5 fw-semibold"> &#8377; {{pro.totalprice}} </div>
+                            </div>
+                        </div>
+                    </div>
+                        
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="">
+        <hr>
+        <div class="text-end fs-5 fw-semibold">
+            Subtotal : &#8377; {{subtotal}}
+        </div>
+    </div>
+</div>

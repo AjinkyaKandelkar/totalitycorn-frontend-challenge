@@ -1,0 +1,92 @@
+
+<div class="container mt-4">
+
+    <div class="row ">
+        <div class="row mb-2">
+            <div class="col ">
+
+                
+            </div>
+        </div>
+        <div class="col-md-3 border mb-sm-3">
+            <div class=" d-flex justify-content-between mt-2">
+                <div class="fs-4"> 
+                    Filter 
+                </div>
+                <div class="">
+                    <button type="button" class="btn btn-danger" (click)="filterByCategory('')">  Reset </button>
+                </div>
+            </div>
+            <hr>
+
+            <div class="accordion mb-sm-3" id="accordionExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                       <span class="fw-semibold text-muted"> Filter By Category  </span> 
+                    </button>
+                </h2>
+                <!-- <div class="btn btn-primary" > {{cname}} </div>  -->
+
+                  <div id="collapseOne" class="accordion-collapse collapse  " data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <div *ngFor="let cat of category" class=" p-2 ">
+                            <button type="button" class="btn btn-light fs-9" (click)="filterByCategory(cat)">
+                                {{cat}} <span class="badge text-bg-secondary"></span>
+                            </button>
+            
+                        </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+
+            
+        </div>
+        <div class="col-md-9">
+            <div class="row">
+                <div *ngFor="let x of filterdproductlist " class="col-md-12  " [routerLink]="['/productdetail',x._id]">
+                    <div class="card indivisualcard mb-2">
+                        <div class="row">
+                            <div class="col-md-2 col-sm-4">
+                                <img class="card-img-top img-fluid " src="{{x.thumbnailUrl}}" alt="" onerror="this.src='assets/no-image-icon-23485.png';" >
+                            </div>
+                            <div class="col-md-10 col-sm-8">
+                                <div class=" card-body row">
+                                    <div class="col-md-8">
+                                        <div class="header ">
+                                            
+                                               <div class=" fs-5 fw-semibold "> {{x.title}} </div> 
+                                
+                                                <div class="authour fs-9">
+                                                    by <i> {{x.authors}} </i>
+                                                </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-4 ">
+                                        <div class="d-flex align-items-center">
+                                            <div class="fw-bold fs-5"> &#8377;  {{x.price}}.00 </div> 
+                                        </div>    
+                                    </div>
+                                </div>
+                                
+                    
+                                    
+                                
+                            </div>
+                            
+                                        
+                                
+                           
+                        </div>
+                        
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>

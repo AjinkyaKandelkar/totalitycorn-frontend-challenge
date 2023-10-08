@@ -1,0 +1,26 @@
+.img-clr
+{
+    filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(130deg) brightness(95%) contrast(80%);
+}
+.dropdown-item:hover
+{
+    cursor: pointer;
+}
+.dropdown-menu[data-bs-popper] {
+    left: -46px !important;
+}
+.dot {
+    height: 2rem;
+    width: 2rem;
+    background-color: #bbb;
+    border-radius: 50%;
+    object-fit: cover;
+    display: inline-block;
+  }
+  .badge {
+    
+    font-size: 0.7rem;
+    font-weight: 100;
+  
+    
+  }

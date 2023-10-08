@@ -1,0 +1,109 @@
+<div class="container-fluid">
+ 
+    <div class="row mt-2 mb-4">
+        <div class="col-lg-4 col-md-6">
+            <div class="text-center ms-2 mt-2  pt-3 ">
+                <img src="{{ProdObj['thumbnailUrl']}}" class="" alt="" style="width:350px ;" onerror="this.src='assets/no-image-icon-23485.png';">
+            </div>
+        </div>
+        <div class="col-lg-8 col-md-6">
+            <div class="col-lg-10 col-md-12">
+                <div class=" d-flex justify-content-between">
+                    <div class="fs-2 fw-bold mt-2">
+                        {{ProdObj['title']}}
+                    </div>
+                    <div class=" mt-2">
+                        <button type="button" class="btn btn-primary" (click)="toCart()"> Add to Cart</button>
+                    </div>
+                </div>
+                <div class=" mt-2" style="font-size: 14px;">
+                    by {{ProdObj['authors']}} (Author)
+                </div>
+                <div>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                </div>
+                <hr>
+                <div class="col-2 mb-4">
+                    <div class="">
+                        <div class="card fw-semibold text-center price-card">
+                           
+                                PaperBack 
+                                <div class="" style="color:red!important">
+                                    &#8377; {{ProdObj.price}}.00
+                                </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div style="height:40vh ; font-size: smaller;" >
+                    {{ProdObj['shortDescription']}}
+                    
+                    <span class="">  
+                        {{ProdObj['longDescription']}}
+                    </span>
+                </div>
+                <div>
+                    <button class="btn btn-danger" (click)="calldesc()"> Show desc </button>
+                </div>
+                <div class="row">
+                    <div class="col-lg-2 col-md-4">
+                        <div class="card text-center border-0">
+                            <div class="card-header small-font">
+                                Print Length
+                            </div>
+                            <div class="card-body">
+                                <i class="bi bi-journal-text fs-3"></i>
+                            </div>
+                            <div class="footer small-font fw-semibold">
+                                {{ProdObj['pageCount']}} Pages
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4">
+                        <div class="card text-center border-0">
+                            <div class="card-header small-font">
+                                Language
+                            </div>
+                            <div class="card-body">
+                                <i class="bi bi-translate fs-3"></i>
+                            </div>
+                            <div class="footer small-font fw-semibold">
+                                English
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4">
+                        <div class="card text-center border-0">
+                            <div class="card-header small-font">
+                                Category
+                            </div>
+                            <div class="card-body">
+                                <i class="bi bi-tag fs-3"></i>
+                            </div>
+                            <div class="footer small-font fw-semibold">
+                                {{ProdObj.categories}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4">
+                        <div class="card text-center border-0">
+                            <div class="card-header small-font">
+                                ISBN
+                            </div>
+                            <div class="card-body">
+                                <i class="bi bi-upc fs-3"></i>
+                            </div>
+                            <div class="footer small-font fw-semibold">
+                                {{ProdObj.isbn}}
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

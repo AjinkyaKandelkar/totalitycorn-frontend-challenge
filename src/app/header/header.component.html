@@ -1,0 +1,71 @@
+
+  <!-- isLoggedIn$ |async  -->
+<nav   class="navbar navbar-expand-md bg-dark navbar-dark" style="position: sticky; top:0; z-index:100;" *ngIf="currentUser">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+          <img src="../../assets/Logo.svg" class="img-fluid img-clr" alt="" style="width: 3rem;">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="products" >Library </a>
+        </li>
+        
+      </ul>
+      <div>
+       <a routerLink="cart">
+        <div  class="bi bi-cart3 text-light fs-4 position-relative me-4">
+          
+          <span class="position-absolute top-0  translate-middle badge rounded-pill bg-danger">
+            {{totalitem}}
+            <span class="visually-hidden">unread messages</span>
+          </span>
+        </div>
+        
+       </a>
+      </div>
+      <div class="d-flex" >
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item me-2">
+              <div class="dropdown dropdown-sm nav-link">
+                <button class="btn btn-dark border " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <span class="me-2">
+
+                    <img  class="img-fluid dot" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8&w=1000&q=80" alt="">
+                  </span>
+                   {{currentUser.firstname}}
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark ">
+                  <li>
+                    <a class="dropdown-item" [routerLink]="['/profile',currentUser.id]">
+                      <i class="bi bi-person-circle me-2"></i>  Profile
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item">
+                      <i class="bi bi-gear me-2" ></i>  Setting
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item"  (click)="logout()">
+                      <i class="bi bi-power me-2"></i> Logout
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</nav>
